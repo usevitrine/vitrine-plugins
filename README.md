@@ -26,7 +26,8 @@ What each site does (APIs, rate limits, quirks): [`docs/sites.md`](docs/sites.md
 ## Writing a plugin
 
 When you add a plugin or change its `version`, update its entry in `index.json` too (Vitrine offers an update when
-the index has a newer version than the one installed).
+the index has a newer version than the one installed). Each entry has a `kind` - `booru`, `gallery` or `social` -
+for the filters in Vitrine's Add site, and `nsfw: true` for adult sites (offered only when asked for).
 
 
 A plugin is a manifest naming one of Vitrine's built-in engines plus the site's details (API address, the domains it
