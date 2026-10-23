@@ -1,0 +1,27 @@
+id: rule34
+name: Rule 34
+version: 1.3.1
+engine: gelbooru-v02
+base: https://api.rule34.xxx
+post_url: https://rule34.xxx/index.php?page=post&s=view&id={id}
+# rule34.xxx and every subdomain (API, image and video CDNs).
+domains: [rule34.xxx]
+auth:
+  fields: [api_key, user_id]
+  required: true
+  help: >-
+    rule34's API needs a free account: log in on rule34.xxx and copy the API key and user ID
+    from your account options.
+# About one request a second is what other downloaders use. Files: 3 at once (measured 2026-10-15:
+# one at a time ~18 MB/s, three at once ~50 MB/s).
+limits: {requests_per_sec: 1, connections: 3}
+# Files fetched as the site's own pages link them (file.png?<post id>): its US Cloudflare cache had broken copies of
+# some files under the bare URL (they crawled and stopped part-way); the ?<id> copy is whole (2026-10-21).
+file_query: "{id}"
+# OR searches: ( a ~ b ~ c ) - the picked tags' "Download any of them".
+search: {per_page: 100, or: "( {tags} )"}
+ratings: {s: general, safe: general, general: general, q: questionable, questionable: questionable, e: explicit, explicit: explicit}
+# Tag types come with each page (one extra request per page); these become namespaces.
+tags:
+  types: tag_info
+  namespaces: {artist: creator, character: character, copyright: series, metadata: meta}

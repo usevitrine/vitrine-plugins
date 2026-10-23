@@ -1,0 +1,23 @@
+id: baraag
+name: baraag.net
+version: 1.1.0
+# Mastodon (4.7): hashtags and profiles through its API. Each file of a post is one file in Vitrine,
+# with the post's hashtags and its author as the creator.
+engine: mastodon
+base: https://baraag.net
+site: baraag.net
+domains: [baraag.net] # files are on media.baraag.net (a subdomain)
+search:
+  hint: "#tag or @profile, e.g. #art #furry -#gore"
+# Mastodon allows 300 API requests per 5 minutes per IP.
+limits: {requests_per_sec: 1, connections: 3}
+auth:
+  fields: [access_token]
+  login: bearer
+  help: >-
+    Optional. Without it, hashtags show baraag users' posts only (profiles work either way). To make one:
+    baraag Preferences > Development > New application (only the "read" scope), then copy "Your access token".
+ratings: {sensitive: explicit, safe: general}
+tags:
+  types: page
+  namespaces: {artist: creator}

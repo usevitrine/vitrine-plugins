@@ -1,0 +1,20 @@
+id: exhentai
+name: ExHentai
+version: 1.1.1
+# Like e-hentai.yaml (the same engine and syntax), on exhentai.org: needs an e-hentai
+# account that has ExHentai access (a blank "sad panda" page means it doesn't yet).
+engine: ehentai
+base: https://exhentai.org
+site: exhentai.org
+post_url: https://exhentai.org/g/{id}/
+domains: [exhentai.org, e-hentai.org, hath.network, ehgt.org]
+limits: {requests_per_sec: 1, connections: 3} # (pictures come from many image servers: 3 at once; the site's own pages 1 a second - 2 seemed too fast)
+auth:
+  fields: [username, password, ipb_member_id, ipb_pass_hash]
+  login: ehentai
+  required: true
+  help: Your e-hentai.org forum login (user name and password) - or, if the login asks for a captcha, the ipb_member_id and ipb_pass_hash cookies from a browser where you're logged in.
+search:
+  hint: Tags, words or a gallery link
+tags:
+  namespaces: {artist: creator, parody: series, character: character}

@@ -1,0 +1,22 @@
+id: e-hentai
+name: E-Hentai Galleries
+version: 1.1.1
+# Galleries (doujinshi, manga, image sets): each comes in as a comic on the Comics page.
+# Searches use the site's own syntax (artist:"name$", female:"glasses$", plain words);
+# a gallery's link (https://e-hentai.org/g/<gid>/<token>/) downloads that one comic -
+# subscribed, its newer versions update it.
+engine: ehentai
+base: https://e-hentai.org
+site: e-hentai.org
+post_url: https://e-hentai.org/g/{id}/
+domains: [e-hentai.org, hath.network, ehgt.org]
+# Gentle: a picture page a second, one picture at a time (the site bans fast downloaders).
+limits: {requests_per_sec: 1, connections: 3} # (pictures come from many image servers: 3 at once; the site's own pages 1 a second - 2 seemed too fast)
+auth:
+  fields: [username, password, ipb_member_id, ipb_pass_hash]
+  login: ehentai
+  help: Optional. Your e-hentai.org forum login (user name and password) - or, if the login asks for a captcha, the ipb_member_id and ipb_pass_hash cookies from a browser where you're logged in. Logged in, your account's own image limit applies.
+search:
+  hint: Tags, words or a gallery link
+tags:
+  namespaces: {artist: creator, parody: series, character: character}

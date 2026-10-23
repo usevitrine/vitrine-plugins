@@ -1,0 +1,17 @@
+id: rule34hentai
+name: Rule34Hentai
+version: 1.0.0
+# Shimmie2 without its APIs (danbooru_api and GraphQL answer 404): read through the web pages.
+engine: shimmie2
+base: https://rule34hentai.net
+site: rule34hentai.net
+post_url: https://rule34hentai.net/post/view/{id}
+domains: [rule34hentai.net]
+limits: {requests_per_sec: 1, connections: 2}
+# Optional: searches work as a guest. Signing in uses the site's login form; the password only goes there.
+auth:
+  fields: [username, password]
+  login: shimmie2
+  help: Your rule34hentai.net account. Optional - searches work without one.
+# Shimmie's ratings; unrated posts (most) are explicit on this site.
+ratings: {safe: general, questionable: questionable, explicit: explicit, unrated: explicit, "": explicit}

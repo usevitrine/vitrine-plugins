@@ -1,0 +1,85 @@
+{
+  "plugins": [
+    {
+      "id": "safebooru",
+      "name": "Safebooru",
+      "site": "safebooru.org",
+      "version": "1.0.0",
+      "file": "plugins/safebooru.yaml",
+      "description": "Safe-for-work images; no account needed. Comes with Vitrine (install it here to bring it back after removing it).",
+      "nsfw": false
+    },
+    {
+      "id": "realbooru",
+      "name": "Realbooru",
+      "site": "realbooru.com",
+      "version": "1.1.0",
+      "file": "plugins/realbooru.yaml",
+      "description": "Read through the site's web pages (its API is switched off). No account needed.",
+      "nsfw": true
+    },
+    {
+      "id": "rule34",
+      "name": "Rule 34",
+      "site": "rule34.xxx",
+      "version": "1.3.1",
+      "file": "plugins/rule34.yaml",
+      "description": "Needs a free account: API key and user ID (Settings > Sites after installing).",
+      "nsfw": true
+    },
+    {
+      "id": "rule34hentai",
+      "name": "Rule34Hentai",
+      "site": "rule34hentai.net",
+      "version": "1.0.0",
+      "file": "plugins/rule34hentai.yaml",
+      "description": "Shimmie2, read through the site's web pages. An account is optional (sign in with your user name and password).",
+      "nsfw": true
+    },
+    {
+      "id": "baraag",
+      "name": "baraag.net",
+      "site": "baraag.net",
+      "version": "1.1.1",
+      "file": "plugins/baraag.yaml",
+      "description": "Mastodon server for art: #hashtags (#art #furry, ~#either, -#without) and @profiles. Files and hashtags, the author as the creator. An access token is optional.",
+      "nsfw": true
+    },
+    {
+      "id": "danbooru",
+      "name": "Danbooru",
+      "site": "danbooru.donmai.us",
+      "version": "1.0.0",
+      "file": "plugins/danbooru.yaml",
+      "description": "Anime-style art. An account is optional (more tags per search, every file, your favorites with fav:me).",
+      "nsfw": true
+    },
+    {
+      "id": "safebooru-donmai",
+      "name": "Safebooru (Danbooru)",
+      "site": "safebooru.donmai.us",
+      "version": "1.0.0",
+      "file": "plugins/safebooru-donmai.yaml",
+      "description": "Danbooru's safe-for-work mirror. No account needed.",
+      "nsfw": false
+    },
+    {
+      "id": "e-hentai",
+      "name": "E-Hentai Galleries",
+      "site": "e-hentai.org",
+      "version": "1.1.1",
+      "file": "plugins/e-hentai.yaml",
+      "description": "Galleries (doujinshi, manga, image sets) as comics on the Comics page. An account is optional.",
+      "nsfw": true
+    },
+    {
+      "id": "exhentai",
+      "name": "ExHentai",
+      "site": "exhentai.org",
+      "version": "1.1.1",
+      "file": "plugins/exhentai.yaml",
+      "description": "Like E-Hentai, on exhentai.org: needs an e-hentai account with ExHentai access.",
+      "nsfw": true
+    }
+  ]
+}

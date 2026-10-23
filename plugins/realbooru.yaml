@@ -1,0 +1,25 @@
+id: realbooru
+name: Realbooru
+version: 1.1.0
+# Gelbooru 0.2 with its API switched off: read through the web pages.
+engine: gelbooru-v02-html
+base: https://realbooru.com
+site: realbooru.com
+post_url: https://realbooru.com/index.php?page=post&s=view&id={id}
+domains: [realbooru.com]
+# Optional: signed in through the site's login form (its session kept) - fav:me is then your favorites.
+auth:
+  fields: [username, password]
+  login: gelbooru
+  help: >-
+    Optional. Your realbooru account: with it, fav:me downloads your favorites (and a subscription to it keeps them
+    in step). Anyone's favorites work without it: fav:<their user ID> (the number in their favorites page's address).
+# One connection only: the site throttles extra ones to almost nothing (one: 1-4.5 MB/s; measured 2026-10-12 and 2026-10-21).
+limits: {requests_per_sec: 1, connections: 1}
+# Hotlink protection: file URLs answer with a web page unless the request comes from the site.
+referer: https://realbooru.com/
+# No rating on the pages; everything on the site is explicit.
+ratings: {"": explicit}
+tags:
+  types: page
+  namespaces: {artist: creator, character: character, copyright: series, model: model, metadata: meta}

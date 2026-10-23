@@ -1,0 +1,21 @@
+# Safebooru (Danbooru), Danbooru's safe-for-work mirror: only posts rated
+# general. No account needed (an optional one works like Danbooru's).
+id: safebooru-donmai
+name: Safebooru (Danbooru)
+version: 1.0.0
+engine: danbooru
+base: https://safebooru.donmai.us
+post_url: https://safebooru.donmai.us/posts/{id}
+domains: [donmai.us] # files are on cdn.donmai.us
+auth:
+  fields: [login, api_key]
+  help: >-
+    Optional. Your Danbooru user name, and an API key from My Account > API Key.
+limits: {requests_per_sec: 2, connections: 3}
+search:
+  per_page: 200
+  hint: "e.g. blue_sky -cloud (two tags without an account); ~a ~b for either"
+ratings: {g: general, s: sensitive, q: questionable, e: explicit}
+tags:
+  types: post
+  namespaces: {artist: creator, copyright: series, character: character, meta: meta}
