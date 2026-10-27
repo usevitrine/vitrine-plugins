@@ -13,6 +13,10 @@ What each plugin's site does, as found while writing the plugins (dates are when
   minutes; about one request a second with pauses is fine.
 - Files (2026-10-15): one at a time ~18 MB/s, three at once ~50 MB/s, so the plugin uses `connections: 3`.
 - Posts often carry a source link (usually the artist's post elsewhere).
+- Paging depth (2026-10-27, the web list pages via FlareSolverr): offsets from somewhere between 75k and 100k posts
+  answer "Unable to search this deep in temporarily." (no posts). The engine never pages deep - always `pid=0` plus
+  `id:<N` - and `id:<N` pages stay fine at any depth (checked down to id 5,000,000), so searches reach their oldest
+  post. Favorites pages page by `pid` (favorites.go), so a favorites list past the cap would stop there.
 - Files are fetched with `?<post id>` (`file_query`), as rule34's own pages link them (2026-10-21): through a US exit,
   Cloudflare's Washington cache (IAD) had broken copies of some files under the bare URL the API gives - "HIT", then
   a crawl stopping at the same byte every time (London's cache was fine); the `?<id>` URL is cached apart, whole.
