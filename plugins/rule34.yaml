@@ -1,6 +1,6 @@
 id: rule34
 name: Rule 34
-version: 1.3.1
+version: 1.4.0
 engine: gelbooru-v02
 base: https://api.rule34.xxx
 post_url: https://rule34.xxx/index.php?page=post&s=view&id={id}
@@ -13,8 +13,9 @@ auth:
     rule34's API needs a free account: log in on rule34.xxx and copy the API key and user ID
     from your account options.
 # About one request a second is what other downloaders use. Files: 3 at once (measured 2026-10-15:
-# one at a time ~18 MB/s, three at once ~50 MB/s).
-limits: {requests_per_sec: 1, connections: 3}
+# one at a time ~18 MB/s, three at once ~50 MB/s). Up to 6 where more add up (Vitrine 1.0.6+ measures: through a VPN
+# route each connection to the video server can crawl while more of them add up).
+limits: {requests_per_sec: 1, connections: 3, max_connections: 6}
 # Files fetched as the site's own pages link them (file.png?<post id>): its US Cloudflare cache had broken copies of
 # some files under the bare URL (they crawled and stopped part-way); the ?<id> copy is whole (2026-10-21).
 file_query: "{id}"

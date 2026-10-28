@@ -12,6 +12,9 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - Rate limits (2026-10-14): back-to-back lookups at 1 request/s nonstop got `429 Too Many Requests` after about two
   minutes; about one request a second with pauses is fine.
 - Files (2026-10-15): one at a time ~18 MB/s, three at once ~50 MB/s, so the plugin uses `connections: 3`.
+  `max_connections: 6` (2026-10-28, plugin 1.4.0, needs Vitrine 1.0.6: `min_vitrine` in the index): through a VPN
+  exit far from the video server single connections crawl at 100-300 KB/s, so Vitrine tries more and keeps them while
+  they add up.
 - Posts often carry a source link (usually the artist's post elsewhere).
 - Paging depth (2026-10-27, the web list pages via FlareSolverr): offsets from somewhere between 75k and 100k posts
   answer "Unable to search this deep in temporarily." (no posts). The engine never pages deep - always `pid=0` plus
