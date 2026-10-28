@@ -80,6 +80,8 @@ What each plugin's site does, as found while writing the plugins (dates are when
 
 - JSON API (`/posts.json`, `/posts/<id>.json`, `/counts/posts.json`); files on cdn.donmai.us. Reads are limited to
   about 10 a second; the plugins ask 2. safebooru.donmai.us is the same site showing only posts rated general.
+- Files: 3 at once, up to 6 where more add up (`max_connections`, 2026-10-28, plugins 1.1.0, need Vitrine 1.0.6 -
+  `min_vitrine` in the index): cdn.donmai.us is a CDN, and the request limit covers the API, not files.
 - No account: two tags per search (more is refused with 422), and some posts come without a file URL (banned, or
   for members only) - the engine passes those over. An account: user name + API key (My Account > API Key; the
   posts:index and posts:show permissions are enough) in Settings > Sites.

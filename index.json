@@ -55,8 +55,9 @@
       "id": "danbooru",
       "name": "Danbooru",
       "site": "danbooru.donmai.us",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "file": "plugins/danbooru.yaml",
+      "min_vitrine": "1.0.6",
       "description": "Anime-style art. An account is optional (more tags per search, every file, your favorites with fav:me).",
       "kind": "booru",
       "nsfw": true
@@ -65,8 +66,9 @@
       "id": "safebooru-donmai",
       "name": "Safebooru (Danbooru)",
       "site": "safebooru.donmai.us",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "file": "plugins/safebooru-donmai.yaml",
+      "min_vitrine": "1.0.6",
       "description": "Danbooru's safe-for-work mirror. No account needed.",
       "kind": "booru",
       "nsfw": false

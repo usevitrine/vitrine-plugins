@@ -4,7 +4,7 @@
 # your favorites.
 id: danbooru
 name: Danbooru
-version: 1.0.0
+version: 1.1.0
 engine: danbooru
 base: https://danbooru.donmai.us
 post_url: https://danbooru.donmai.us/posts/{id}
@@ -14,7 +14,9 @@ auth:
   help: >-
     Optional. Your user name, and an API key from danbooru.donmai.us > My Account > API Key
     (only the posts:index and posts:show permissions are needed).
-limits: {requests_per_sec: 2, connections: 3}
+# Files from cdn.donmai.us (a CDN: each connection its own speed): up to 6 at once where more add up (Vitrine 1.0.6+
+# measures and keeps more only while the total rises).
+limits: {requests_per_sec: 2, connections: 3, max_connections: 6}
 search:
   per_page: 200
   hint: "e.g. blue_sky -cloud (two tags without an account); ~a ~b for either"
