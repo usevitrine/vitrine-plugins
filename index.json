@@ -45,7 +45,7 @@
       "id": "baraag",
       "name": "baraag.net",
       "site": "baraag.net",
-      "version": "1.1.1",
+      "version": "1.1.0",
       "file": "plugins/baraag.yaml",
       "description": "Mastodon server for art: #hashtags (#art #furry, ~#either, -#without) and @profiles. Files and hashtags, the author as the creator. An access token is optional.",
       "kind": "social",
