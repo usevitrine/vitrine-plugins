@@ -29,6 +29,15 @@ When you add a plugin or change its `version`, update its entry in `index.json` 
 the index has a newer version than the one installed). Each entry has a `kind` - `booru`, `gallery` or `social` -
 for the filters in Vitrine's Add site, and `nsfw: true` for adult sites (offered only when asked for).
 
+Every new version also gets a `changelog` entry (newest first) - Vitrine shows it with the update (the versions not
+installed yet) and in the site's Version history:
+
+```json
+"changelog": [{"version": "1.4.0", "date": "2026-10-28", "changes": ["Downloads up to 6 files at once."]}]
+```
+
+Write each change as what it does for the user, in plain words.
+
 
 A plugin is a manifest naming one of Vitrine's built-in engines plus the site's details (API address, the domains it
 may contact, rate limits, how its ratings map to Vitrine's). See Vitrine's built-in example,
