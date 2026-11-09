@@ -146,12 +146,19 @@
       "id": "exhentai",
       "name": "ExHentai",
       "site": "exhentai.org",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "file": "plugins/exhentai.yaml",
       "description": "Like E-Hentai, on exhentai.org: needs an e-hentai account with ExHentai access.",
       "kind": "gallery",
       "nsfw": true,
       "changelog": [
+        {
+          "version": "1.2.0",
+          "date": "2026-11-09",
+          "changes": [
+            "Reads the site's pages one every 3 seconds: at one a second the site banned the address for a while."
+          ]
+        },
         {
           "version": "1.1.1",
           "date": "2026-10-20",

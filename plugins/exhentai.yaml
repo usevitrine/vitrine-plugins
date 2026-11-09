@@ -1,6 +1,6 @@
 id: exhentai
 name: ExHentai
-version: 1.1.1
+version: 1.2.0
 # Like e-hentai.yaml (the same engine and syntax), on exhentai.org: needs an e-hentai
 # account that has ExHentai access (a blank "sad panda" page means it doesn't yet).
 engine: ehentai
@@ -8,7 +8,7 @@ base: https://exhentai.org
 site: exhentai.org
 post_url: https://exhentai.org/g/{id}/
 domains: [exhentai.org, e-hentai.org, hath.network, ehgt.org]
-limits: {requests_per_sec: 1, connections: 3} # (pictures come from many image servers: 3 at once; the site's own pages 1 a second - 2 seemed too fast)
+limits: {requests_per_sec: 0.33, connections: 3} # (pictures come from many image servers: 3 at once; the site's own pages one every 3 s - at 1 a second a 188-page gallery got the address banned after 49 pages, 2026-11-09)
 auth:
   fields: [username, password, ipb_member_id, ipb_pass_hash]
   login: ehentai
