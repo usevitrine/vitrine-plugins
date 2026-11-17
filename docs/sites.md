@@ -140,6 +140,8 @@ What each plugin's site does, as found while writing the plugins (dates are when
   OR), `@user` (`/v2/users/<name>/search?order=new`), or a clip's link (`/watch/<id>`, one clip). A tag search gives
   one kind at a time (`type=g` videos, the default, or `type=i` pictures - `type:images` in the search); a user's gives
   both. 80 a page; a tag search stops after 10,000 clips (page 126 of 80 answers 500), a user's goes to the end.
+- The tag search is loose: a tag the site doesn't know is ignored (a search for it gives everything) and known ones
+  sometimes match clips without them - Vitrine keeps only clips with every tag, and says when none has them all.
 - Tags come as words ("Big Smile"): stored as `big_smile`. The poster's user name is the creator tag.
 - Clips have word IDs; Vitrine numbers them by upload time (see the engine's notes in the app's docs), so a clip's
   `id:N` or a lookup by number doesn't work - its link does.
