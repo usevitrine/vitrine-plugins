@@ -14,6 +14,7 @@ law where you live.
 | [`konachan`](plugins/konachan.yaml) | konachan.com | moebooru | no |
 | [`konachan-net`](plugins/konachan-net.yaml) | konachan.net | moebooru | no |
 | [`realbooru`](plugins/realbooru.yaml) | realbooru.com | gelbooru-v02-html | no |
+| [`redgifs`](plugins/redgifs.yaml) | redgifs.com | redgifs | no |
 | [`rule34`](plugins/rule34.yaml) | rule34.xxx | gelbooru-v02 | yes: API key + user ID |
 | [`rule34hentai`](plugins/rule34hentai.yaml) | rule34hentai.net | shimmie2 | no (optional login) |
 | [`e621`](plugins/e621.yaml) | e621.net | e621 | no (optional: user name + API key) |

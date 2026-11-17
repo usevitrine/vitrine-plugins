@@ -1,0 +1,20 @@
+# RedGIFs (redgifs.com): short adult videos and pictures. No account needed (the
+# site's temporary token, fetched by Vitrine). Search by tags (clips with all of
+# them), @user for someone's clips (the user becomes the creator), or paste a
+# clip's link. Tag searches give videos; add type:images for pictures.
+id: redgifs
+name: RedGIFs
+version: 1.0.0
+engine: redgifs
+base: https://api.redgifs.com
+domains: [redgifs.com] # files are on media.redgifs.com
+# Files from a CDN: up to 6 at once where more add up. Resuming a tag search after a restart can take a few
+# requests (the site pages by number), so the API is asked once a second.
+limits: {requests_per_sec: 1, connections: 3, max_connections: 6}
+search:
+  hint: "e.g. cosplay big_smile (all of them), @user, type:images"
+ratings: {"": explicit}
+# The user who posted a clip is its creator.
+tags:
+  types: post
+  namespaces: {artist: creator}

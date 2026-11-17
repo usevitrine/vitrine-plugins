@@ -130,3 +130,17 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - Searches: `blue_sky -cloud`, `~a ~b` (either), `fav:<name>` (`fav:me` with an account), the site's metatags
   (`rating:s`, `score:>10`; `order:` other than by ID breaks resuming - avoid it).
 - e926.net shows only posts rated safe. Checked live 2026-11-17 on e926.net (search, the next page, a lookup).
+
+## redgifs (`plugins/redgifs.yaml`, engine `redgifs`)
+
+- API v2 at api.redgifs.com, with the temporary token anyone gets from `/v2/auth/temporary` (a JWT, sent as a
+  bearer token to the API only; Vitrine keeps it a day and fetches another when refused). Files on media.redgifs.com
+  (no token needed): `urls.hd`, `urls.sd` as the fallback.
+- Searches: tags (`/v2/gifs/search?tags=a,b&order=latest`: clips with all of them; case doesn't matter; no `-tag`, no
+  OR), `@user` (`/v2/users/<name>/search?order=new`), or a clip's link (`/watch/<id>`, one clip). A tag search gives
+  one kind at a time (`type=g` videos, the default, or `type=i` pictures - `type:images` in the search); a user's gives
+  both. 80 a page; a tag search stops after 10,000 clips (page 126 of 80 answers 500), a user's goes to the end.
+- Tags come as words ("Big Smile"): stored as `big_smile`. The poster's user name is the creator tag.
+- Clips have word IDs; Vitrine numbers them by upload time (see the engine's notes in the app's docs), so a clip's
+  `id:N` or a lookup by number doesn't work - its link does.
+- Checked live 2026-11-17 (a tag search, resuming after a restart, a clip's link).

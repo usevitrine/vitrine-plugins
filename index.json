@@ -240,6 +240,17 @@
       "description": "e621's safe-for-work side: only posts rated safe. An account is optional (user name + API key).",
       "kind": "booru",
       "nsfw": false
+    },
+    {
+      "id": "redgifs",
+      "name": "RedGIFs",
+      "site": "redgifs.com",
+      "version": "1.0.0",
+      "file": "plugins/redgifs.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Short adult videos and pictures: tags, @user (the creator), or a clip's link. No account needed.",
+      "kind": "social",
+      "nsfw": true
     }
   ]
 }
