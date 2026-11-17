@@ -1,0 +1,19 @@
+# Konachan (safe) (konachan.net), a Moebooru site: konachan.com's safe-for-work side (only posts rated safe).
+# No account needed (Vitrine doesn't sign in there): fav:<user name> downloads
+# someone's favorites.
+id: konachan-net
+name: Konachan (safe)
+version: 1.0.0
+engine: moebooru
+base: https://konachan.net
+post_url: https://konachan.net/post/show/{id}
+domains: [konachan.net]
+limits: {requests_per_sec: 2, connections: 2, max_connections: 4}
+search:
+  per_page: 200
+  hint: "e.g. blue_sky -cloud; ~a ~b for either; fav:<name> for someone's favorites"
+ratings: {s: general, q: questionable, e: explicit}
+# Tag types come with every page; these become namespaces.
+tags:
+  types: post
+  namespaces: {artist: creator, circle: creator, copyright: series, character: character, faults: meta, meta: meta}

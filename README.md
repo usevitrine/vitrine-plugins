@@ -11,13 +11,19 @@ law where you live.
 |---|---|---|---|
 | [`baraag`](plugins/baraag.yaml) | baraag.net | mastodon | no (an access token is optional) |
 | [`danbooru`](plugins/danbooru.yaml) | danbooru.donmai.us | danbooru | no (optional: user name + API key) |
+| [`konachan`](plugins/konachan.yaml) | konachan.com | moebooru | no |
+| [`konachan-net`](plugins/konachan-net.yaml) | konachan.net | moebooru | no |
 | [`realbooru`](plugins/realbooru.yaml) | realbooru.com | gelbooru-v02-html | no |
 | [`rule34`](plugins/rule34.yaml) | rule34.xxx | gelbooru-v02 | yes: API key + user ID |
 | [`rule34hentai`](plugins/rule34hentai.yaml) | rule34hentai.net | shimmie2 | no (optional login) |
+| [`e621`](plugins/e621.yaml) | e621.net | e621 | no (optional: user name + API key) |
+| [`e926`](plugins/e926.yaml) | e926.net | e621 | no (optional: user name + API key) |
 | [`e-hentai`](plugins/e-hentai.yaml) | e-hentai.org | ehentai (galleries as comics) | no (optional login) |
 | [`exhentai`](plugins/exhentai.yaml) | exhentai.org | ehentai (galleries as comics) | yes (an e-hentai login with ExHentai access) |
 | [`safebooru`](plugins/safebooru.yaml) | safebooru.org | gelbooru-v02 | no (also built into Vitrine) |
 | [`safebooru-donmai`](plugins/safebooru-donmai.yaml) | safebooru.donmai.us | danbooru | no (optional: user name + API key) |
+| [`sakugabooru`](plugins/sakugabooru.yaml) | sakugabooru.com | moebooru | no |
+| [`yandere`](plugins/yandere.yaml) | yande.re | moebooru | no |
 
 ## Site notes
 

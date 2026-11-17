@@ -1,0 +1,24 @@
+# e926 (e926.net): e621's safe-for-work side (only posts rated safe).
+# An account is optional: without one some posts' files are hidden (those are
+# passed over). With one, fav:me downloads your favorites.
+id: e926
+name: e926
+version: 1.0.0
+engine: e621
+base: https://e926.net
+post_url: https://e926.net/posts/{id}
+domains: [e926.net] # files are on static1.e926.net
+auth:
+  fields: [login, api_key]
+  help: >-
+    Optional. Your user name, and an API key from e926.net > Account > Manage API Access.
+# The API allows 2 requests a second at most (the site asks for 1); files come from a CDN, apart from that limit.
+limits: {requests_per_sec: 1, connections: 3, max_connections: 6}
+search:
+  per_page: 320
+  hint: "e.g. blue_sky -cloud; ~a ~b for either"
+ratings: {s: general, q: questionable, e: explicit}
+# Tag types come with every post; these become namespaces.
+tags:
+  types: post
+  namespaces: {artist: creator, contributor: contributor, copyright: series, character: character, species: species, meta: meta, lore: lore}

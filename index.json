@@ -174,6 +174,72 @@
           ]
         }
       ]
+    },
+    {
+      "id": "yandere",
+      "name": "yande.re",
+      "site": "yande.re",
+      "version": "1.0.0",
+      "file": "plugins/yandere.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "High-resolution anime-style scans and art (Moebooru). No account needed; fav:<name> for someone's favorites.",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "konachan",
+      "name": "Konachan",
+      "site": "konachan.com",
+      "version": "1.0.0",
+      "file": "plugins/konachan.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Anime-style wallpapers (Moebooru). No account needed. Some countries are sent to konachan.net: use Konachan (safe) there.",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "konachan-net",
+      "name": "Konachan (safe)",
+      "site": "konachan.net",
+      "version": "1.0.0",
+      "file": "plugins/konachan-net.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Konachan's safe-for-work side: only posts rated safe. No account needed.",
+      "kind": "booru",
+      "nsfw": false
+    },
+    {
+      "id": "sakugabooru",
+      "name": "Sakugabooru",
+      "site": "sakugabooru.com",
+      "version": "1.0.0",
+      "file": "plugins/sakugabooru.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Clips of notable animation, mostly short videos (Moebooru). No account needed.",
+      "kind": "booru",
+      "nsfw": false
+    },
+    {
+      "id": "e621",
+      "name": "e621",
+      "site": "e621.net",
+      "version": "1.0.0",
+      "file": "plugins/e621.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Furry art, animation and video. An account is optional: user name + API key (some files are hidden without one; fav:me).",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "e926",
+      "name": "e926",
+      "site": "e926.net",
+      "version": "1.0.0",
+      "file": "plugins/e926.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "e621's safe-for-work side: only posts rated safe. An account is optional (user name + API key).",
+      "kind": "booru",
+      "nsfw": false
     }
   ]
 }

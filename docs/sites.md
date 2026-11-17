@@ -99,3 +99,34 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - Gentle by default: a page a second, one picture at a time. The site's image limit stops a download until it
   refills (logged in, the account's own limit applies); it carries on from the page it stopped at.
 - e-hentai blocks the United Kingdom (HTTP 451, Online Safety Act): reach it from elsewhere (a VPN).
+
+## yandere, konachan, konachan-net and sakugabooru (`plugins/yandere.yaml`, `konachan.yaml`, `konachan-net.yaml`, `sakugabooru.yaml`, engine `moebooru`)
+
+- Moebooru's JSON API (`/post.json?api_version=2&include_tags=1`: a page of posts plus every tag's type); the total
+  from `/post.xml`'s `count`. Up to 1000 posts a page (the plugins ask 200). No documented rate limit; the plugins
+  ask 2 requests a second, 2 files at once (up to 4).
+- Tag types: artist, circle (both the creator), copyright (series), character, faults and meta (meta), general;
+  konachan's "style" stays a plain tag.
+- Searches: `blue_sky -cloud`, `~a ~b` (either), `fav:<name>` (that user's favorites: the site's `vote:3:<name>`).
+  No sign-in (Moebooru's login is a salted password hash, not an API key), so no `fav:me`. Ratings `s`/`q`/`e`.
+- yande.re's files are on files.yande.re. konachan.net is konachan.com's safe-for-work side (every post rated s);
+  from some countries (the UK, 2026-11-17) konachan.com answers every request with a redirect to konachan.net -
+  the plugin doesn't follow it (another site): use konachan-net there, or reach konachan.com from elsewhere.
+- sakugabooru: animation clips, nearly all mp4 (a few images); files on www.sakugabooru.com.
+- Checked live 2026-11-17 (search, the next page, a lookup) on konachan.net; yande.re, konachan.com (from a non-UK
+  address) and sakugabooru answered the same API.
+
+## e621 and e926 (`plugins/e621.yaml`, `plugins/e926.yaml`, engine `e621`)
+
+- JSON API (`/posts.json`, `/posts/<id>.json`), up to 320 posts a page, resumed with `page=b<ID>`. Every post has
+  its tags by category: artist (creator), contributor, copyright (series), character, species, meta, lore, general
+  (invalid ones stay plain). Files on static1.e621.net / static1.e926.net.
+- The site allows 2 requests a second at most and asks for 1 (the plugins ask 1); it wants a User-Agent naming the
+  program (Vitrine's does - a browser's gets Cloudflare's check).
+- No count of a search: a one-tag search's total is that tag's post count (`/tags.json`); other searches, and every
+  search on e926 (its tag counts include the posts it doesn't show), have none.
+- Account optional: user name + API key (Account > Manage API Access), sent in the query. Without one some posts
+  come without a file URL (the site's default blacklist for guests); they're passed over. A wrong key is a 401.
+- Searches: `blue_sky -cloud`, `~a ~b` (either), `fav:<name>` (`fav:me` with an account), the site's metatags
+  (`rating:s`, `score:>10`; `order:` other than by ID breaks resuming - avoid it).
+- e926.net shows only posts rated safe. Checked live 2026-11-17 on e926.net (search, the next page, a lookup).
