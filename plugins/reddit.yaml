@@ -1,0 +1,32 @@
+# Reddit (reddit.com): the pictures, videos and galleries of subreddits and users. Needs your own Reddit app (free:
+# reddit.com/prefs/apps, a "script" app) - Reddit refuses its API to anyone without one. Search r/name (a subreddit's
+# newest), r/name words (its search), u/name (a user's posts), or paste a post's link. Reddit has no tags: the
+# subreddit, the poster (the creator) and the post's flair become tags; a RedGIFs clip a post links brings RedGIFs'
+# tags too. Reddit's own videos keep their sound in a file of their own: Vitrine joins them (ffmpeg).
+id: reddit
+name: Reddit
+version: 1.0.0
+engine: reddit
+base: https://oauth.reddit.com
+site: reddit.com
+# The API (oauth.reddit.com), tokens (www.reddit.com), files (i.redd.it, v.redd.it, preview.redd.it) and the RedGIFs
+# clips posts link (media.redgifs.com).
+domains: [reddit.com, redd.it, redgifs.com]
+auth:
+  fields: [client_id, client_secret, username, password]
+  login: reddit
+  required: true
+  help: >-
+    Make a free app at reddit.com/prefs/apps ("create another app", type "script", any redirect URL such as
+    http://localhost) and copy its client ID (under its name) and secret. Your Reddit username and password are
+    optional: with them Vitrine reads Reddit as you (what your account may see); accounts with two-factor sign-in
+    can't be used that way.
+# Reddit allows 100 API requests a minute: one a second stays under it. Files come from Reddit's CDN.
+limits: {requests_per_sec: 1, connections: 3, max_connections: 6}
+search:
+  hint: "r/subreddit, r/subreddit words, u/user, or a post's link"
+ratings: {sfw: general, nsfw: explicit}
+# The poster is the creator; the subreddit a tag of its own.
+tags:
+  types: post
+  namespaces: {artist: creator, subreddit: subreddit}

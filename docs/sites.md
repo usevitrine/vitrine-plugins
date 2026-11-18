@@ -188,6 +188,14 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - The image servers (`img*.gelbooru.com`) redirect a file to its post page without a Referer.
 - Not behind Cloudflare through the VPN (Ireland).
 
+## reddit (`plugins/reddit.yaml`, engine `reddit`)
+- Without OAuth every Reddit API address answers 403 "Blocked" through the VPN (2026-11-18); the token endpoint
+  answers. So the plugin needs the user's own app (reddit.com/prefs/apps, a script app): its client ID and secret,
+  and optionally the account's username and password (not with two-factor sign-in).
+- 100 API requests a minute with OAuth: the plugin asks once a second. Files: i.redd.it, v.redd.it (videos, the sound
+  apart - joined), preview.redd.it, and media.redgifs.com for the RedGIFs clips posts link.
+- `site: reddit.com` is set (the API's host is oauth.reddit.com).
+
 ## Tried, not added
 - **tbib.org** (Gelbooru 0.2, a mirror of other boorus; no tag types): through the VPN (Ireland) Cloudflare answers
   "Attention Required!" - a block, not a challenge, so FlareSolverr can't help (2026-11-18). Works from other
