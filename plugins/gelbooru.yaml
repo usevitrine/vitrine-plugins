@@ -12,9 +12,10 @@ auth:
   help: >-
     Gelbooru's API needs a free account: log in on gelbooru.com and copy the API key and user ID
     from My Account > Options ("API Access Credentials").
-# 3 API requests a second: an account may make 10 (the account options say so); the first page of a search asks for
-# its tags' types in batches of 100 (tags.types: tag_api).
-limits: {requests_per_sec: 3, connections: 2}
+# 10 API requests a second, the limit of an account (its options page says so): one limit for every request to the
+# API - searches, tag lookups, subscription checks and refreshes - one every 100 ms. A 429 makes them all wait.
+# Files (img*.gelbooru.com) don't count.
+limits: {requests_per_sec: 10, connections: 2}
 # Without it the image servers redirect a file to its post page (2026-11-18).
 referer: https://gelbooru.com/
 search: {per_page: 100, or: "( {tags} )"}
