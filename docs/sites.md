@@ -179,9 +179,16 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - Mastodon 4.1 (2026-11-18). Unlike baraag, hashtag timelines work as a guest with other servers' posts included.
   Files (others' too, cached) on `img.pawoo.net`. API rate limit 300 / 5 min.
 
+## gelbooru (`plugins/gelbooru.yaml`, engine `gelbooru-v02`, tag types `tag_api`)
+- gelbooru.com runs a newer Gelbooru than the 0.2 sites (2026-11-18): the API needs an account's API key and user ID
+  (401 without); its XML has each post's fields as elements, not attributes; its JSON has no `fields=tag_info`, so
+  tag types come from the tag API (`s=tag&names=...`, types as numbers: 0 general, 1 artist, 3 copyright,
+  4 character, 5 metadata, 6 deprecated).
+- An account may make 10 API requests a second (its options page says so; more on request), so the plugin uses 3.
+- The image servers (`img*.gelbooru.com`) redirect a file to its post page without a Referer.
+- Not behind Cloudflare through the VPN (Ireland).
+
 ## Tried, not added
 - **tbib.org** (Gelbooru 0.2, a mirror of other boorus; no tag types): through the VPN (Ireland) Cloudflare answers
   "Attention Required!" - a block, not a challenge, so FlareSolverr can't help (2026-11-18). Works from other
   connections.
-- **gelbooru.com**: its API needs an account's API key and user ID (401 without), and its replies differ from
-  the other Gelbooru sites' (it runs a newer Gelbooru): needs an account to check, and likely engine work.

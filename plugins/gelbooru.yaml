@@ -1,0 +1,25 @@
+# Gelbooru (gelbooru.com): the original Gelbooru, a newer version than the 0.2 sites. Its API needs a free account.
+id: gelbooru
+name: Gelbooru
+version: 1.0.0
+engine: gelbooru-v02
+base: https://gelbooru.com
+post_url: https://gelbooru.com/index.php?page=post&s=view&id={id}
+domains: [gelbooru.com] # files are on img*.gelbooru.com / video-cdn*.gelbooru.com
+auth:
+  fields: [api_key, user_id]
+  required: true
+  help: >-
+    Gelbooru's API needs a free account: log in on gelbooru.com and copy the API key and user ID
+    from My Account > Options ("API Access Credentials").
+# 3 API requests a second: an account may make 10 (the account options say so); the first page of a search asks for
+# its tags' types in batches of 100 (tags.types: tag_api).
+limits: {requests_per_sec: 3, connections: 2}
+# Without it the image servers redirect a file to its post page (2026-11-18).
+referer: https://gelbooru.com/
+search: {per_page: 100, or: "( {tags} )"}
+ratings: {general: general, sensitive: sensitive, questionable: questionable, explicit: explicit, s: general, safe: general, q: questionable, e: explicit}
+# Tag types from the tag API (only for tags not seen yet); these become namespaces.
+tags:
+  types: tag_api
+  namespaces: {artist: creator, character: character, copyright: series, metadata: meta}

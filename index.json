@@ -264,6 +264,17 @@
       "nsfw": true
     },
     {
+      "id": "gelbooru",
+      "name": "Gelbooru",
+      "site": "gelbooru.com",
+      "version": "1.0.0",
+      "file": "plugins/gelbooru.yaml",
+      "min_vitrine": "1.5.0",
+      "description": "Anime art (Gelbooru), with artist, character and series tags. Needs a free account.",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
       "id": "xbooru",
       "name": "Xbooru",
       "site": "xbooru.com",
