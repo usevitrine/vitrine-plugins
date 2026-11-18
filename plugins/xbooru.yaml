@@ -1,0 +1,15 @@
+# Xbooru: Gelbooru 0.2 (adult art); no account needed.
+id: xbooru
+name: Xbooru
+version: 1.0.0
+engine: gelbooru-v02
+base: https://xbooru.com
+post_url: https://xbooru.com/index.php?page=post&s=view&id={id}
+domains: [xbooru.com] # files are on img.xbooru.com
+limits: {requests_per_sec: 1, connections: 2}
+search: {per_page: 100, or: "( {tags} )"}
+ratings: {s: general, safe: general, general: general, q: questionable, questionable: questionable, e: explicit, explicit: explicit}
+# Tag types come with each page (one extra request per page); these become namespaces.
+tags:
+  types: tag_info
+  namespaces: {artist: creator, character: character, copyright: series, metadata: meta}

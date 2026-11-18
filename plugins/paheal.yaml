@@ -1,0 +1,17 @@
+# Rule34 paheal: Shimmie2, read through its Danbooru-style API (one request a page, everything in it). Lots of
+# animated posts; tags are often names with capitals (searches ignore case). No account needed.
+id: paheal
+name: Rule34 (paheal)
+version: 1.0.0
+engine: shimmie2
+api: danbooru
+base: https://rule34.paheal.net
+site: rule34.paheal.net
+post_url: https://rule34.paheal.net/post/view/{id}
+domains: [paheal.net, paheal-cdn.net] # files are on r34i.paheal-cdn.net
+limits: {requests_per_sec: 1, connections: 2}
+search:
+  per_page: 100
+  hint: "e.g. some_character -some_tag (names with underscores)"
+# Almost every post is unrated (?); the site is adult.
+ratings: {safe: general, questionable: questionable, explicit: explicit, unrated: explicit, "": explicit}

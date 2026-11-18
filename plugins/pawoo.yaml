@@ -1,0 +1,23 @@
+id: pawoo
+name: Pawoo
+version: 1.0.0
+# Mastodon: hashtags and profiles through its API (an art-focused instance, much of it Japanese). Each file of a
+# post is one file in Vitrine, with the post's hashtags and its author as the creator.
+engine: mastodon
+base: https://pawoo.net
+site: pawoo.net
+domains: [pawoo.net] # files are on img.pawoo.net (a subdomain)
+search:
+  hint: "#tag or @profile, e.g. #art #illustration"
+# Mastodon allows 300 API requests per 5 minutes per IP.
+limits: {requests_per_sec: 1, connections: 3}
+auth:
+  fields: [access_token]
+  login: bearer
+  help: >-
+    Optional (hashtags and profiles work without it). To make one: Pawoo Preferences > Development > New
+    application (only the "read" scope), then copy "Your access token".
+ratings: {sensitive: explicit, safe: general}
+tags:
+  types: page
+  namespaces: {artist: creator}

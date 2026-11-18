@@ -146,3 +146,42 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - Clips have word IDs; Vitrine numbers them by upload time (see the engine's notes in the app's docs), so a clip's
   `id:N` or a lookup by number doesn't work - its link does.
 - Checked live 2026-11-17 (a tag search, resuming after a restart, a clip's link).
+
+## xbooru and hypnohub (`plugins/xbooru.yaml`, `plugins/hypnohub.yaml`, engine `gelbooru-v02`)
+- Gelbooru 0.2 with the dapi on, no account needed (2026-11-18). Both answer "Access Restricted" from some countries
+  (the UK); fine from elsewhere.
+- OR searches `( a ~ b )` work on both. Ratings `s`/`q`/`e`.
+- Tag types: xbooru's JSON API gives `fields=tag_info` (artist, character, copyright, metadata, tag - the rule34
+  names); hypnohub's has none, so its tags come without namespaces.
+- Files: xbooru on `img.xbooru.com`, hypnohub on the site itself.
+
+## paheal (`plugins/paheal.yaml`, engine `shimmie2` with `api: danbooru`)
+- rule34.paheal.net: Shimmie2 with its theme's own list markup (the thumbnail's data is on a `div.shm-thumb`, not on
+  the link the `shimmie2` engine reads), but **its Danbooru-style API is on** (2026-11-18):
+  `/api/danbooru/find_posts?tags=...&limit=N` (at most 100) and `?id=N` for one post. Each post has id, md5,
+  `file_url` (no extension - the type comes from the file), width/height, rating (`?` on almost all: unrated),
+  `date` (`2026-11-18 00:53:59`, UTC), tags (with capitals; searches ignore case) and source.
+- `id<N` and `order=id_desc` work in the API's tags, as on the pages.
+- **HTML entities in the XML** (`&oacute;` in tags): the engine decodes them (Go's XML decoder only knows XML's five).
+- Files on `r34i.paheal-cdn.net`, no referer needed. Many animated posts (mp4, webm, gif).
+- No account in the plugin (searches work without one).
+
+## aibooru (`plugins/aibooru.yaml`, engine `danbooru`)
+- aibooru.online: Danbooru for AI-generated pictures (2026-11-18). Tags have an extra type, `tag_string_model` (the AI
+  model), read by the danbooru engine as the `model` type -> the `model:` namespace.
+- Files on `cdn.aibooru.download` (a second domain in `domains`).
+- **Cloudflare through the VPN**: Vitrine's own requests get challenged even with a clearance while FlareSolverr's
+  browser is let through, so every request falls back to the browser's page - Chrome's JSON viewer (`<pre>` around
+  the JSON), which Vitrine unwraps. It works, slowly; FlareSolverr is needed there. Without the VPN the API answers
+  plain requests.
+
+## pawoo (`plugins/pawoo.yaml`, engine `mastodon`)
+- Mastodon 4.1 (2026-11-18). Unlike baraag, hashtag timelines work as a guest with other servers' posts included.
+  Files (others' too, cached) on `img.pawoo.net`. API rate limit 300 / 5 min.
+
+## Tried, not added
+- **tbib.org** (Gelbooru 0.2, a mirror of other boorus; no tag types): through the VPN (Ireland) Cloudflare answers
+  "Attention Required!" - a block, not a challenge, so FlareSolverr can't help (2026-11-18). Works from other
+  connections.
+- **gelbooru.com**: its API needs an account's API key and user ID (401 without), and its replies differ from
+  the other Gelbooru sites' (it runs a newer Gelbooru): needs an account to check, and likely engine work.

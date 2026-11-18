@@ -1,0 +1,23 @@
+# AIBooru: Danbooru, for AI-generated pictures (has adult content). An account is optional; with one, fav:me
+# downloads your favorites.
+id: aibooru
+name: AIBooru
+version: 1.0.0
+engine: danbooru
+base: https://aibooru.online
+post_url: https://aibooru.online/posts/{id}
+domains: [aibooru.online, aibooru.download] # files are on cdn.aibooru.download
+auth:
+  fields: [login, api_key]
+  help: >-
+    Optional. Your user name, and an API key from aibooru.online > My Account > API Key
+    (only the posts:index and posts:show permissions are needed).
+limits: {requests_per_sec: 2, connections: 3}
+search:
+  per_page: 200
+  hint: "e.g. blue_sky -cloud; ~a ~b for either"
+ratings: {g: general, s: sensitive, q: questionable, e: explicit}
+# Tag types come with every post; these become namespaces (model: the AI model used).
+tags:
+  types: post
+  namespaces: {artist: creator, copyright: series, character: character, meta: meta, model: model}

@@ -1,0 +1,11 @@
+# HypnoHub: Gelbooru 0.2 (hypnosis-themed art, much of it adult); no account needed.
+id: hypnohub
+name: HypnoHub
+version: 1.0.0
+engine: gelbooru-v02
+base: https://hypnohub.net
+post_url: https://hypnohub.net/index.php?page=post&s=view&id={id}
+domains: [hypnohub.net]
+limits: {requests_per_sec: 1, connections: 2}
+search: {per_page: 100, or: "( {tags} )"}
+ratings: {s: general, safe: general, general: general, q: questionable, questionable: questionable, e: explicit, explicit: explicit}

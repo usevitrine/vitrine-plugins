@@ -251,6 +251,61 @@
       "description": "Short adult videos and pictures: tags, @user (the creator), or a clip's link. No account needed.",
       "kind": "social",
       "nsfw": true
+    },
+    {
+      "id": "paheal",
+      "name": "Rule34 (paheal)",
+      "site": "rule34.paheal.net",
+      "version": "1.0.0",
+      "file": "plugins/paheal.yaml",
+      "min_vitrine": "1.5.0",
+      "description": "A large rule 34 site with many animated posts (Shimmie2, through its API). Tags are mostly names: characters, series, artists. No account needed.",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "xbooru",
+      "name": "Xbooru",
+      "site": "xbooru.com",
+      "version": "1.0.0",
+      "file": "plugins/xbooru.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Adult art (Gelbooru), with artist, character and series tags. No account needed.",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "hypnohub",
+      "name": "HypnoHub",
+      "site": "hypnohub.net",
+      "version": "1.0.0",
+      "file": "plugins/hypnohub.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Hypnosis-themed art, much of it adult (Gelbooru). No account needed.",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "aibooru",
+      "name": "AIBooru",
+      "site": "aibooru.online",
+      "version": "1.0.0",
+      "file": "plugins/aibooru.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "AI-generated pictures (Danbooru), with the model used as a tag. An account is optional (user name + API key).",
+      "kind": "booru",
+      "nsfw": true
+    },
+    {
+      "id": "pawoo",
+      "name": "Pawoo",
+      "site": "pawoo.net",
+      "version": "1.0.0",
+      "file": "plugins/pawoo.yaml",
+      "min_vitrine": "1.4.0",
+      "description": "Mastodon server for art, much of it Japanese: #hashtags and @profiles. Files and hashtags, the author as the creator. An access token is optional.",
+      "kind": "social",
+      "nsfw": true
     }
   ]
 }
