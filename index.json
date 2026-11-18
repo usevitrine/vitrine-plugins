@@ -253,17 +253,6 @@
       "nsfw": true
     },
     {
-      "id": "reddit",
-      "name": "Reddit",
-      "site": "reddit.com",
-      "version": "1.0.0",
-      "file": "plugins/reddit.yaml",
-      "min_vitrine": "1.5.0",
-      "description": "Subreddits and users: pictures, galleries and videos (with sound). Needs your own free Reddit app.",
-      "kind": "social",
-      "nsfw": false
-    },
-    {
       "id": "paheal",
       "name": "Rule34 (paheal)",
       "site": "rule34.paheal.net",

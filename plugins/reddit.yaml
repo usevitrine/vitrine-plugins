@@ -15,6 +15,9 @@ domains: [reddit.com, redd.it, redgifs.com]
 auth:
   fields: [client_id, client_secret, username, password]
   login: reddit
+  # Vitrine's own Reddit app (an installed app, no secret) once Reddit approves it - then required: false, and the
+  # plugin goes into index.json. Until then: each user's own app.
+  # app_id: ""
   required: true
   help: >-
     Make a free app at reddit.com/prefs/apps ("create another app", type "script", any redirect URL such as

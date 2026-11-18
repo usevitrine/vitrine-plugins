@@ -195,6 +195,8 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - 100 API requests a minute with OAuth: the plugin asks once a second. Files: i.redd.it, v.redd.it (videos, the sound
   apart - joined), preview.redd.it, and media.redgifs.com for the RedGIFs clips posts link.
 - `site: reddit.com` is set (the API's host is oauth.reddit.com).
+- **Not in index.json yet** (2026-11-18): Reddit's Responsible Builder Policy needs an approved app; the project
+  applies once for an installed app whose ID goes in `auth.app_id` (then `required: false` and the index entry).
 
 ## Tried, not added
 - **tbib.org** (Gelbooru 0.2, a mirror of other boorus; no tag types): through the VPN (Ireland) Cloudflare answers
