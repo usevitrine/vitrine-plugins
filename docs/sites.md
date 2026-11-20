@@ -61,7 +61,9 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - Login: the form at `/user_admin/login` (fields `user`, `pass`); the session is the `shm_user`/`shm_session` cookies.
   The plugin uses `auth.login: shimmie2`, so the user name and password never go into request URLs.
 
-## baraag (`plugins/baraag.yaml`, engine `mastodon`)
+## baraag (retired 2026-11-20: `retired/baraag.yaml`, engine `mastodon`)
+- **Gone**: baraag.net stopped resolving around 2026-11-19 (its domain fails on every DNS server tried). The
+  plugin is out of the index, kept in `retired/` (with its index entry) in case the site comes back.
 - Mastodon 4.7.2 (a fork, github.com/baraag-net/mastodon). API rate limit 300 requests / 5 min per IP; up to 4
   files per post; files on `media.baraag.net` (images, `gifv` = mp4 animations, videos).
 - `timelines_access` (2026-10-16): hashtag feeds `local: public, remote: authenticated` - guests get a 422 "requires

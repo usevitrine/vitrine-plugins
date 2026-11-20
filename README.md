@@ -9,7 +9,6 @@ law where you live.
 
 | Plugin | Site | Engine | Needs an account |
 |---|---|---|---|
-| [`baraag`](plugins/baraag.yaml) | baraag.net | mastodon | no (an access token is optional) |
 | [`danbooru`](plugins/danbooru.yaml) | danbooru.donmai.us | danbooru | no (optional: user name + API key) |
 | [`konachan`](plugins/konachan.yaml) | konachan.com | moebooru | no |
 | [`konachan-net`](plugins/konachan-net.yaml) | konachan.net | moebooru | no |
