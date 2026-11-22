@@ -205,3 +205,7 @@ What each plugin's site does, as found while writing the plugins (dates are when
 - **tbib.org** (Gelbooru 0.2, a mirror of other boorus; no tag types): through the VPN (Ireland) Cloudflare answers
   "Attention Required!" - a block, not a challenge, so FlareSolverr can't help (2026-11-18). Works from other
   connections.
+- **Checked 2026-11-22, none usable**: tbib.org again (still the same block through the VPN). e6ai.net (e621's
+  software, AI art): down - Cloudflare 522 from home, no address through the VPN. booru.borvar.art (Danbooru): a
+  Cloudflare check on the API. giantessbooru.com (Shimmie2): redirects to a members' site. tentaclerape.net: no site
+  any more. loudbooru.com, booru.cavemanon.xyz (Shimmie2): Cloudflare 522 (their servers down).
