@@ -1,0 +1,28 @@
+# Bluesky (bsky.app): profiles' media posts without an account; hashtag searches need one (Bluesky's search
+# refuses guests). Each image or video of a post is one file in Vitrine, the original from the author's server, with
+# the post's hashtags and its author as the creator.
+id: bluesky
+name: Bluesky
+version: 1.0.0
+engine: bluesky
+base: https://bsky.social # (sign-in, and every request when signed in)
+site: bsky.app
+# public.api.bsky.app (guests), cdn.bsky.app (image copies), the authors' servers (*.host.bsky.network), plc.directory
+# (which server an author is on)
+domains: [bsky.app, bsky.social, bsky.network, plc.directory]
+search:
+  hint: "@profile or #hashtag, e.g. @someone.bsky.social"
+# Bluesky allows 3,000 API requests per 5 minutes per address.
+limits: {requests_per_sec: 2, connections: 3}
+auth:
+  fields: [handle, app_password]
+  login: bluesky
+  help: >-
+    Optional: profiles work without it, hashtag searches need it. Your handle (e.g. someone.bsky.social) and an app
+    password from Bluesky > Settings > Privacy and security > App passwords - never your account's password. Only
+    accounts on bsky.social can sign in here.
+# Bluesky's adult-content labels on the post or its author; none: general.
+ratings: {porn: explicit, sexual: questionable, nudity: questionable, graphic-media: questionable, safe: general}
+tags:
+  types: page
+  namespaces: {artist: creator}

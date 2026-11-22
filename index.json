@@ -307,6 +307,17 @@
       "description": "Mastodon server for art, much of it Japanese: #hashtags and @profiles. Files and hashtags, the author as the creator. An access token is optional.",
       "kind": "social",
       "nsfw": true
+    },
+    {
+      "id": "bluesky",
+      "name": "Bluesky",
+      "site": "bsky.app",
+      "version": "1.0.0",
+      "file": "plugins/bluesky.yaml",
+      "min_vitrine": "1.6.0",
+      "description": "Profiles' media posts (no account needed) and hashtags (with your handle + an app password). Original files, hashtags as tags, the author as creator.",
+      "kind": "social",
+      "nsfw": false
     }
   ]
 }

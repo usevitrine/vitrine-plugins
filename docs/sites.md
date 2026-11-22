@@ -201,6 +201,16 @@ What each plugin's site does, as found while writing the plugins (dates are when
   (2026-11-18), and Reddit answered (2026-11-22) that it has stopped accepting API access requests altogether -
   apps must run on its Developer Platform, inside Reddit. Shelved: the file stays here in case that changes.
 
+## bluesky (`plugins/bluesky.yaml`, engine `bluesky`)
+- bsky.app, through Bluesky's API (engine notes: Vitrine's `docs/downloader/engines.md`, "Bluesky engine").
+  Profiles work without an account; hashtag searches need a handle and an app password (searchPosts answers guests
+  403). Only accounts on bsky.social can sign in (`base: https://bsky.social`).
+- Domains: bsky.app (public.api for guests, cdn for image copies), bsky.social (sign-in, and the API when signed in),
+  bsky.network (the authors' servers, the original files), plc.directory (which server an author is on).
+- 3,000 requests per 5 minutes per address: the plugin asks twice a second. Checked live 2026-11-22 (a profile, the
+  next page, a post's link, an original file; through the VPN too). A hashtag search with an account isn't tried
+  live yet.
+
 ## Tried, not added
 - **tbib.org** (Gelbooru 0.2, a mirror of other boorus; no tag types): through the VPN (Ireland) Cloudflare answers
   "Attention Required!" - a block, not a challenge, so FlareSolverr can't help (2026-11-18). Works from other

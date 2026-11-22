@@ -9,6 +9,7 @@ law where you live.
 
 | Plugin | Site | Engine | Needs an account |
 |---|---|---|---|
+| [`bluesky`](plugins/bluesky.yaml) | bsky.app | bluesky | no (hashtags: handle + app password) |
 | [`danbooru`](plugins/danbooru.yaml) | danbooru.donmai.us | danbooru | no (optional: user name + API key) |
 | [`konachan`](plugins/konachan.yaml) | konachan.com | moebooru | no |
 | [`konachan-net`](plugins/konachan-net.yaml) | konachan.net | moebooru | no |
